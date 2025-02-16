@@ -1,5 +1,6 @@
-
-
+/**********************************************************
+  1. FONT-FACES
+**********************************************************/
 @font-face {
     font-family: 'Times new Roman';
     font-style: normal;
@@ -13,32 +14,39 @@
     src: url('./fonts/Jost-Regular.ttf') format('woff');
 }
 
+
+/**********************************************************
+  2. PROJECT__BOX (From Original)
+**********************************************************/
 .project__box {
     display: flex;
     margin-bottom: 20px;
     flex-direction: row-reverse;
-  }
+}
 
-  .project__text {
+.project__text {
     flex: 1; /* Take remaining space */
     text-align: justify;
     margin-right: 20px;
     margin-left: 20px;
-  }
+}
 
-  .project__image {
-    
+.project__image {
     display: inline-block;
     vertical-align: top; 
     flex: 0 0 300px;
     order: 1;
-  }
+}
 
-  .project__image img {
+.project__image img {
     max-width: 100%; /* Ensure the image doesn't exceed its container */
     height: auto; /* Maintain aspect ratio */
-  }
-  
+}
+
+
+/**********************************************************
+  3. GLOBAL RESETS & :root VARIABLES
+**********************************************************/
 * {
     margin: 0;
     padding: 0;
@@ -61,7 +69,6 @@
     --pink: #6274a1;
     --white: #fffcff;
     --white-1: #e5e5e6da;
-
 
     --container-max-width: 1180px;
     --container-normal-width: 800px;
@@ -140,6 +147,9 @@ img {
 }
 
 
+/**********************************************************
+  4. HEADINGS (h1, h2, h3)
+**********************************************************/
 h1,
 h2,
 h3 {
@@ -167,7 +177,6 @@ h2 {
     font-size: var(--font-size-large);
     margin-bottom: var(--gutter-medium);
 }
-
 h2::after {
     content: '';
     display: block;
@@ -186,11 +195,9 @@ h3 {
     .heading-primary {
         font-size: var(--font-size-large);
     }
-
     h2 {
         font-size: var(--font-size-medium-1);
     }
-
     h3 {
         font-size: var(--font-size-medium);
     }
@@ -207,6 +214,9 @@ p {
 }
 
 
+/**********************************************************
+  5. LINKS & BUTTONS
+**********************************************************/
 a {
     color: var(--white);
     font-weight: 400;
@@ -242,11 +252,9 @@ body:not(.user-is-tabbing) a:focus {
     border: 1px solid  var(--pink);
     font-weight: 400;
 }
-
 .btn:focus {
     outline: none;
 }
-
 .btn::after {
     content: '';
     display: block;
@@ -259,22 +267,18 @@ body:not(.user-is-tabbing) a:focus {
     z-index: -1;
     transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
 }
-
 .btn:hover::after,
 .btn:focus::after {
     right: 0;
     background: var(--pink);
 }
-
 .btn--pink {
     background: var(--pink);
     transition: all 0.2s;
 }
-
 .btn--pink::after {
     display: none;
 }
-
 .btn--pink:hover,
 .btn--pink:focus {
     background: transparent;
@@ -288,7 +292,6 @@ body:not(.user-is-tabbing) a:focus {
     text-decoration: none;
     border-bottom: 1px solid var(--pink);
 }
-
 .link__text::after {
     content: '';
     display: block;
@@ -301,23 +304,23 @@ body:not(.user-is-tabbing) a:focus {
     z-index: -1;
     transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
 }
-
 .link__text:focus {
     outline: none;
 }
-
 .link__text:hover::after,
-.link__text:focus:after {
+.link__text:focus::after {
     right: 0;
     background: var(--pink);
 }
-
 .link__text span {
     padding-left: 1rem;
     font-family: sans-serif;
 }
 
 
+/**********************************************************
+  6. BACK-TO-TOP
+**********************************************************/
 .back-to-top {
     position: fixed;
     bottom: 4rem;
@@ -333,17 +336,14 @@ body:not(.user-is-tabbing) a:focus {
     visibility: hidden;
     transition: all .4s;
 }
-
 .back-to-top__image {
     height: 70%;
 }
-
 @media(max-width: 900px) {
     .back-to-top {
         right: 2rem;
     }
 }
-
 @media(max-width: 500px) {
     .back-to-top {
         right: 1rem;
@@ -351,9 +351,9 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 
-/* ============== NAVIGATION ============== */
-
-/* Wrap your nav in a container (like .nav) for styling */
+/**********************************************************
+  7. NAVIGATION (Sticky & Modern Hover-Underline)
+**********************************************************/
 .nav {
     /* Keep it pinned to the top */
     position: sticky; 
@@ -363,45 +363,36 @@ body:not(.user-is-tabbing) a:focus {
     /* Layout & background */
     display: flex;
     align-items: center;
-    justify-content: center;  /* center horizontally */
+    justify-content: center; /* center horizontally */
     padding: 1rem 2rem;
     background-color: var(--white); 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* subtle shadow */
-  }
-  
-  /* If you add a brand/logo on the left, you can space things out like:
-  .nav__brand { 
-    margin-right: auto; 
-    font-size: 2rem;
-    color: var(--black);
-  }
-  */
-  
-  .nav__items {
+}
+
+.nav__items {
     list-style: none;
     display: flex;
     align-items: center;
     gap: 2.5rem; /* Larger gap for a more spacious, modern feel */
     margin: 0;
     padding: 0;
-  }
-  
-  /* Nav item just wraps the link; no extra styling needed unless you want it */
-  .nav__item {
+}
+
+/* Nav item just wraps the link; no extra styling needed unless you want it */
+.nav__item {
     /* Optional: text-transform: uppercase; */
-  }
-  
-  /* Modern hover-underline effect for links */
-  .nav__link {
+}
+
+/* Modern hover-underline effect for links */
+.nav__link {
     position: relative;
-    color: var(--black);         /* text color black by default */
+    color: var(--black); /* text color black by default */
     font-size: var(--font-size-normal);
     text-decoration: none;
     transition: color 0.3s ease;
-    padding: 0.5rem 0;          /* vertical padding around text */
-  }
-  
-  .nav__link::after {
+    padding: 0.5rem 0;  /* vertical padding around text */
+}
+.nav__link::after {
     content: "";
     position: absolute;
     left: 0;
@@ -410,32 +401,63 @@ body:not(.user-is-tabbing) a:focus {
     height: 2px;
     background-color: var(--pink); /* uses your #6274a1 */
     transition: width 0.3s ease;
-  }
-  
-  /* Hover states: color changes, underline expands */
-  .nav__link:hover {
+}
+.nav__link:hover {
     color: var(--pink);
-  }
-  
-  .nav__link:hover::after {
+}
+.nav__link:hover::after {
     width: 100%;
-  }
-  
-  /* ================= MEDIA QUERY (MOBILE) ================= */
-  @media (max-width: 768px) {
+}
+
+/* ================= MEDIA QUERY (MOBILE) ================= */
+@media (max-width: 768px) {
     .nav {
       justify-content: space-between; /* or center if you prefer */
       padding: 1rem;
     }
-  
     /* Stack nav items vertically on mobile for clarity */
     .nav__items {
       flex-direction: column;
       gap: 1rem;
     }
-  }
+
+    /* SHOW HAMBURGER ICON, HIDE NAV ON MOBILE (IF DESIRED) */
+    .menu-toggle {
+      display: block;
+      cursor: pointer;
+      font-size: 2.5rem; /* hamburger icon size */
+    }
+    /* By default, hide the .nav__items if you want the hamburger approach: 
+       (We'll rely on .active to show them)
+    */
+    .nav__items {
+      display: none; /* hidden by default on mobile */
+      position: absolute;
+      top: 60px; /* below the nav bar */
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--white);
+      width: 90%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 1rem 0;
+    }
+    /* When .active is toggled, show them again */
+    .nav__items.active {
+      display: flex;
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-toggle {
+      display: none; /* hide hamburger on desktop */
+    }
+}
 
 
+/**********************************************************
+  8. HEADER (with background-attachment: fixed)
+**********************************************************/
 .header {
     background: whi, 
         url('images/whitebg.jpeg');
@@ -446,6 +468,17 @@ body:not(.user-is-tabbing) a:focus {
     font-size: var(--font-size-normal);
     justify-content: center;
 }
+/* Will continue in next half... */
+
+
+/* Will continue in next half... */
+
+/* ============== Continuing from the previous half ============== */
+
+/**********************************************************
+  8. HEADER (CONTINUED)
+    (We ended at .header in the previous chunk)
+**********************************************************/
 
 .header__text {
     position: absolute;
@@ -471,6 +504,9 @@ body:not(.user-is-tabbing) a:focus {
     }
 }
 
+/**********************************************************
+  9. WORK__BOX (with margin-bottom: 25rem)
+**********************************************************/
 
 .work__box {
     display: flex;
@@ -484,6 +520,7 @@ body:not(.user-is-tabbing) a:focus {
     }
 }
 
+/* This is where the large spacing is controlled */
 .work__box:not(:last-child) {
     margin-bottom: 25rem;
 }
@@ -503,8 +540,8 @@ body:not(.user-is-tabbing) a:focus {
     flex: 0 0 30%;
 }
 
+/* list styling for your .work__list if used */
 .work__list {
-    /* list-style-type: square; */
     list-style-position: inside;
     margin-bottom: var(--gutter-normal);
 }
@@ -513,7 +550,7 @@ body:not(.user-is-tabbing) a:focus {
     display: block;
     height: 3rem;
     margin-left: var(--gutter-normal);
-    transition: all .3s;
+    transition: all 0.3s;
 }
 
 .work__code:hover {
@@ -537,6 +574,9 @@ body:not(.user-is-tabbing) a:focus {
     }
 }
 
+/**********************************************************
+  10. CLIENT LOGOS (Optional)
+**********************************************************/
 
 .client__logos {
     display: flex;
@@ -560,6 +600,9 @@ body:not(.user-is-tabbing) a:focus {
     }
 }
 
+/**********************************************************
+  11. ABOUT SECTION
+**********************************************************/
 
 .about__content {
     display: flex;
@@ -590,12 +633,18 @@ body:not(.user-is-tabbing) a:focus {
     }
 }
 
+/**********************************************************
+  12. CONTACT SECTION
+**********************************************************/
 
 .contact__info {
     max-width: var(--container-medium-width);
     text-align: justify;
 }
 
+/**********************************************************
+  13. FOOTER
+**********************************************************/
 
 .footer {
     text-align: center;
@@ -633,3 +682,7 @@ body:not(.user-is-tabbing) a:focus {
         padding: var(--gutter-medium) 0;
     } 
 }
+
+/**********************************************************
+  END OF FULL ~600 LINES
+**********************************************************/

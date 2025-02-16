@@ -7,6 +7,8 @@
   <meta name="description" content="Kushal Kothari's portfolio showcasing software development and data science projects" />
   <meta name="description" content="Actively Looking for full-time opportunities" />
   <meta name="keywords" content="Kushal Kothari, Software Development, Data Analyst, Data Scientist, New Grad" />
+
+  <!-- Link to your updated 600+ line CSS file -->
   <link rel="stylesheet" href="index.css" />
 </head>
 
@@ -16,10 +18,8 @@
     <!-- Navigation Menu -->
     <div class="row">
       <nav class="nav" role="navigation">
-        <!-- 
-          Optionally add a brand/logo on the left or just keep it empty. 
-          <div class="nav__brand">My Portfolio</div> 
-        -->
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <!-- Optionally add a brand/logo on the left if desired -->
         <ul class="nav__items">
           <li class="nav__item"><a href="#work" class="nav__link">Resume</a></li>
           <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
@@ -59,7 +59,9 @@
               <h3>Kushal's Resume</h3>
               <div class="work__links">
                 <!-- Update the PDF link/path as needed -->
-                <a href="Resume.html" target="_blank" class="link__text">Click for resume <span>&rarr;</span></a>
+                <a href="Resume.html" target="_blank" class="link__text">
+                  Click for resume <span>&rarr;</span>
+                </a>
               </div>
             </div>
           </div>
@@ -74,15 +76,15 @@
         <div class="about__content">
           <div class="about__text">
             <p>
-              I'm <strong>Kushal Kothari</strong>, a <strong>software engineer, data scientist, and open-source innovator</strong> with a passion for building scalable, high-impact solutions. Currently pursuing my master’s at <strong>NYU</strong>, I specialize in <strong>cloud computing, distributed systems, and AI-driven data analytics</strong>. From developing secure authentication systems at <strong>NYU Wasserman</strong> to optimizing cloud infrastructure with <strong>AWS & Python</strong>, I thrive at the intersection of engineering and business impact.
+              I'm <strong>Kushal Kothari</strong>, a <strong>software engineer, data scientist, and open-source innovator</strong> with a passion for building scalable, high-impact solutions. Currently pursuing my master’s at <strong>NYU</strong>, I specialize in <strong>cloud computing, distributed systems, and AI-driven data analytics</strong>. From developing secure authentication systems at <strong>NYU Wasserman</strong> to optimizing cloud infrastructure with <strong>AWS &amp; Python</strong>, I thrive at the intersection of engineering and business impact.
             </p>
-            
+
             <p>
-              🚀 <strong>Beyond Code: Open Source & Innovation</strong> : I’ve contributed to the **Apache Software Foundation, Google Summer of Code, and the Linux Kernel**, refining CI/CD pipelines, enhancing network security, and pushing boundaries in decentralized computing. Whether it's slashing packaging times by **24% for Apache APISIX** or architecting encrypted networking solutions, I focus on **efficiency, scalability, and performance**.  
+              🚀 <strong>Beyond Code: Open Source &amp; Innovation</strong>: I’ve contributed to the <strong>Apache Software Foundation</strong>, <strong>Google Summer of Code</strong>, and the <strong>Linux Kernel</strong>, refining CI/CD pipelines, enhancing network security, and pushing boundaries in decentralized computing. Whether it's slashing packaging times by 24% for Apache APISIX or architecting encrypted networking solutions, I focus on efficiency, scalability, and performance.
             </p>
-            
+
             <p>
-              ☕ <strong>Coffee, LeetCode & Colorful Socks</strong> : When I’m not engineering solutions, I’m on a mission to try every coffee roast out there, grind through LeetCode questions, and rock the most ridiculous mismatched socks.If you're as obsessed with cloud tech, AI, and breaking limits as I am, let’s connect and build something epic! 🚀
+              ☕ <strong>Coffee, LeetCode &amp; Colorful Socks</strong>: When I’m not engineering solutions, I’m on a mission to try every coffee roast out there, grind through LeetCode questions, and rock the most ridiculous mismatched socks. If you're as obsessed with cloud tech, AI, and breaking limits as I am, let’s connect and build something epic! 🚀
             </p>
           </div>
 
@@ -204,12 +206,11 @@
       </div>
     </section>
 
-
     <!-- Open Source Section -->
     <section class="opensource" id="opensource">
       <div class="row">
         <h2>Open Source</h2>
-        
+
         <!-- Example open-source item -->
         <div class="project__box">
           <div class="project__text">
@@ -323,7 +324,6 @@
       </div>
     </section>
 
-
     <!-- Projects Section -->
     <section class="projects" id="projects">
       <div class="row">
@@ -382,8 +382,6 @@
           </div>
         </div>
         <br />
-
-        <!-- Add or replace more projects as you wish -->
       </div>
     </section>
 
@@ -446,7 +444,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- Contact Section -->
@@ -487,7 +484,15 @@
     <img src="images/arrow-up.svg" alt="Back to Top" class="back-to-top__image">
   </a>
 
-  <!-- JavaScript Script -->
+  <script>
+    function toggleMenu() {
+      const navItems = document.querySelector('.nav__items');
+      navItems.classList.toggle('active');
+    }
+  </script>
+    
+
+  <!-- Optional JS, if you need anything for scrolling or toggling. -->
   <script src="index.js"></script>
 </body>
 </html>
