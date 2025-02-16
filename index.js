@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (menuToggle && navMenu) {
     menuToggle.addEventListener("click", function () {
+      console.log("Menu button clicked!");
       navMenu.classList.toggle("active");
       menuToggle.classList.toggle("open");
     });
